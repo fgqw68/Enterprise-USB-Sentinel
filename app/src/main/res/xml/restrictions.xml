@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        USB Sentinel Managed Configuration Schema
+
+        This file defines the restrictions that can be configured by MDM/EMM solutions.
+        The Admin policy acts as a "Master Override" that resets the database whenever
+        it is updated.
+    -->
+
+    <!-- Master Switch: Allow All USB -->
+    <!-- When true, clears all USB blocking restrictions -->
+    <!-- When false, applies the BlockList -->
+    <restriction
+        android:key="AllowAllUSB"
+        android:restrictionType="bool"
+        android:title="@string/restriction_allow_all_usb_title"
+        android:description="@string/restriction_allow_all_usb_description"
+        android:defaultValue="true" />
+
+    <!-- Block List: USB Devices to Block -->
+    <!-- Bundle array containing device entries with vendorId, productId, deviceName -->
+    <restriction
+        android:key="BlockList"
+        android:restrictionType="bundle_array"
+        android:title="@string/restriction_block_list_title"
+        android:description="@string/restriction_block_list_description">
+
+        <!-- Individual Device Entry -->
+        <restriction
+            android:key="BlockListEntry"
+            android:restrictionType="bundle"
+            android:title="@string/restriction_block_list_entry_title"
+            android:description="@string/restriction_block_list_entry_description">
+
+            <!-- Vendor ID (VID) -->
+            <restriction
+                android:key="vendorId"
+                android:restrictionType="integer"
+                android:title="@string/restriction_vendor_id_title"
+                android:description="@string/restriction_vendor_id_description" />
+
+            <!-- Product ID (PID) -->
+            <restriction
+                android:key="productId"
+                android:restrictionType="integer"
+                android:title="@string/restriction_product_id_title"
+                android:description="@string/restriction_product_id_description" />
+
+            <!-- Device Name -->
+            <restriction
+                android:key="deviceName"
+                android:restrictionType="string"
+                android:title="@string/restriction_device_name_title"
+                android:description="@string/restriction_device_name_description"
+                android:defaultValue="Admin Blocked Device" />
+
+        </restriction>
+    </restriction>
+
+</restrictions>

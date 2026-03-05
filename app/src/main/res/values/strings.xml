@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">USB Sentinel</string>
+
+    <!-- Managed Configuration: Allow All USB -->
+    <string name="restriction_allow_all_usb_title">Allow All USB Devices</string>
+    <string name="restriction_allow_all_usb_description">When enabled, all USB devices are allowed and the blocking list is cleared. When disabled, only devices in the Block List are blocked.</string>
+
+    <!-- Managed Configuration: Block List -->
+    <string name="restriction_block_list_title">Block List</string>
+    <string name="restriction_block_list_description">List of USB devices to block when Allow All USB is disabled.</string>
+
+    <!-- Managed Configuration: Block List Entry -->
+    <string name="restriction_block_list_entry_title">Device Entry</string>
+    <string name="restriction_block_list_entry_description">A USB device to block in the block list.</string>
+
+    <!-- Managed Configuration: Device Entry Fields -->
+    <string name="restriction_vendor_id_title">Vendor ID (VID)</string>
+    <string name="restriction_vendor_id_description">The Vendor ID of the USB device to block (hex or decimal, 0-65535).</string>
+    <string name="restriction_product_id_title">Product ID (PID)</string>
+    <string name="restriction_product_id_description">The Product ID of the USB device to block (hex or decimal, 0-65535).</string>
+    <string name="restriction_device_name_title">Device Name</string>
+    <string name="restriction_device_name_description">A friendly name for the blocked device (optional).</string>
 </resources>

@@ -15,13 +15,10 @@ public class UsbDeviceEntity {
 
     private String deviceName;
 
-    private boolean isBlocked;
-
-    public UsbDeviceEntity(int vendorId, int productId, String deviceName, boolean isBlocked) {
+    public UsbDeviceEntity(int vendorId, int productId, String deviceName) {
         this.vendorId = vendorId;
         this.productId = productId;
         this.deviceName = deviceName;
-        this.isBlocked = isBlocked;
     }
 
     // Getters and Setters
@@ -56,13 +53,5 @@ public class UsbDeviceEntity {
 
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
-    }
-
-    public boolean isBlocked() {
-        return isBlocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        isBlocked = blocked;
     }
 }
